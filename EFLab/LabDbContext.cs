@@ -24,5 +24,15 @@ public class LabDbContext : DbContext
         modelBuilder.Entity<Category>()
             .Property(c => c.Name)
             .HasMaxLength(15);
+
+        modelBuilder.Entity<Category>().HasData(
+            new Category() { Name = "Ital", Id = 1 }
+        );
+
+        modelBuilder.Entity<Product>().HasData(
+            new Product() { Name = "Sör", Id = 1, UnitPrice = 50, CategoryId = 1 },
+            new Product() { Name = "Bor", Id = 2, UnitPrice = 550, CategoryId = 1 },
+            new Product() { Name = "Tej", Id = 3, UnitPrice = 260, CategoryId = 1 }
+        );
     }
 }
