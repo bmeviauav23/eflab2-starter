@@ -1,9 +1,12 @@
-﻿namespace EFLab.Entities;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace EFLab.Entities;
 
 public class Product
 {
     public int Id { get; set; }
 
+    [Column("ProductName")]
     public required string Name { get; set; }
     public int UnitPrice { get; set; }
 
